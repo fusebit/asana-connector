@@ -105,3 +105,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Stuff
+fusebit-devel/lib
+.*.sw?
