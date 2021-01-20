@@ -1,0 +1,31 @@
+{
+  "name": "@fusebit/asana-connector",
+  "version": "1.0.0",
+  "description": "Fusebit Connector for Asana",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "https://fusebit.io",
+  "packageAs": "@fusebit/asana-connector",
+  "keywords": [],
+  "peerDependencies": {
+    "superagent": "6.1.0"
+  },
+  "dependencies": {
+    "@fusebit/add-on-sdk": "3.1.0",
+    "@fusebit/oauth-connector": "^1.2.1",
+    "asana": "^0.18.5",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "jest": "^24.9.0",
+    "uuid": "^8.3.2",
+    "superagent": "6.1.0"
+  },
+  "scripts": {
+    "test": "jest --colors",
+    "deploy.dev": "cp -r lib fusebit-devel/ && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit-devel -q",
+    "coverage": "jest --colors --coverage",
+    "prettier": "prettier --write ./lib ./test"
+  }
+}

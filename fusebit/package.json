@@ -1,0 +1,11 @@
+{
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "@fusebit/add-on-sdk": "3.1.0",
+    "@fusebit/oauth-connector": "^1.2.1",
+    "asana": "^0.18.5",
+    "express": "4.17.1"
+  }
+}
