@@ -3,7 +3,11 @@ This is the installation logic of the Lifecycle Manager.
 */
 
 const Fs = require('fs');
+const Path = require('path');
+
 const Sdk = require('@fusebit/add-on-sdk');
+
+const ExtraTemplateFiles = require('../../imports').ExtraTemplateFiles;
 
 const getTemplateFiles = (fileNames) =>
   fileNames.reduce((a, c) => {
@@ -30,6 +34,8 @@ ${Object.keys(configuration)
       nodejs: {
         files: {
           ...getTemplateFiles(['index.js', 'VendorAsanaConnector.js']),
+          'imports.js': Fs.readFileSync(Path.normalize(__dirname + '/../../imports.js'), { encoding: 'utf8' }),
+          ...ExtraTemplateFiles,
           'package.json': {
             engines: {
               node: '10',
@@ -38,7 +44,7 @@ ${Object.keys(configuration)
               // Use the same version of @fusebit/oauth-connector as in this package.
               // However, skip the dependency entirely if this is a test run, since the npm
               // module may not yet have been published.
-              ...(!process.env.FUSE_PROFILE && { '@fusebit/oauth-connector': require('../../package.json').version }),
+              ...require('../../imports').Dependencies,
               // The following are declared as peerDependencies of @fusebit/oauth-connector
               // and the versions must match those in top level package.json
               superagent: '6.1.0',

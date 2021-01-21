@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fusebit/add-on-sdk": "3.1.0",
-    "@fusebit/oauth-connector": "^1.2.1",
+    "@fusebit/oauth-connector": "^1.2.3",
     "asana": "^0.18.5",
     "express": "4.17.1"
   },
@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "jest --colors",
-    "deploy.dev": "cp -r lib fusebit-devel/ && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit-devel -q",
+    "deploy.dev": "cp -r lib fusebit/ && cp fusebit/package-devel.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
+    "deploy.prod": "cp fusebit/package-prod.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
     "coverage": "jest --colors --coverage",
     "prettier": "prettier --write ./lib ./test"
   }

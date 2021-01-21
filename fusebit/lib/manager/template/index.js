@@ -1,4 +1,4 @@
 const { VendorAsanaConnector } = require('./VendorAsanaConnector');
-const { createAsanaConnector } = require('@fusebit/asana-connector');
+const createAsanaConnector = require('./imports').createConnectorClass;
 
 module.exports = createAsanaConnector(new VendorAsanaConnector());

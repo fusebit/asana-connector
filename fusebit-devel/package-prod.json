@@ -1,8 +1,0 @@
-{
-  "engines": {
-    "node": "10"
-  },
-  "dependencies": {
-    "@fusebit/asana-connector": "^1.0.0"
-  }
-}

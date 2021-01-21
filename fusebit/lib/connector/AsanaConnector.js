@@ -140,21 +140,9 @@ class AsanaConnector extends OAuthConnector {
   }
 
   async getUserProfile(tokenContext) {
-    const id =
-      tokenContext.authed_user && tokenContext.authed_user.id
-        ? this.getUniqueUserId(tokenContext.team && tokenContext.team.id, tokenContext.authed_user.id)
-        : undefined;
-
     return {
-      id,
-      user_id: tokenContext.authed_user && tokenContext.authed_user.id,
-      app_id: tokenContext.app_id,
-      team_id: tokenContext.team && tokenContext.team.id,
+      id: tokenContext.data.id
     };
-  }
-
-  getUniqueUserId(teamId, userId) {
-    return `${encodeURIComponent(teamId)}/${encodeURIComponent(userId)}`;
   }
 }
 
