@@ -1,9 +1,11 @@
+const fs = require('fs');
+
 const { getPackageFiles } = require('./utility');
 
 let basePath;
 let extraTemplateFiles = {
-  'imports.js': fs.readFileSync('./imports.js', { encoding: 'utf8' }),
-  'utility.js': fs.readFileSync('./utility.js', { encoding: 'utf8' }),
+  'imports.js': fs.readFileSync(__dirname + '/imports.js', { encoding: 'utf8' }),
+  'utility.js': fs.readFileSync(__dirname + '/utility.js', { encoding: 'utf8' }),
 };
 
 const libPath = __dirname + '/lib';
@@ -12,7 +14,7 @@ if (fs.existsSync(libPath) && fs.lstatSync(libPath).isDirectory()) {
   basePath = '.';
   extraTemplateFiles = {
     ...extraTemplateFiles,
-    ...getPackageFiles(path.normalize(libPath), path.normalize(__dirname + '/')),
+    ...getPackageFiles(libPath, __dirname + '/'),
   };
 } else {
   basePath = '@fusebit/asana-connector';

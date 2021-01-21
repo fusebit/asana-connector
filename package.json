@@ -1,6 +1,6 @@
 {
   "name": "@fusebit/asana-connector",
-  "version": "1.0.0",
+  "version": "1.0.0-0",
   "description": "Fusebit Connector for Asana",
   "main": "lib/index.js",
   "license": "MIT",
@@ -25,8 +25,8 @@
   "scripts": {
     "test": "jest --colors",
     "deploy.dev": "cp -r lib fusebit/ && cp fusebit/package-devel.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
-    "deploy.prod": "cp fusebit/package-prod.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
+    "deploy.prod": "rm -rf fusebit/lib && cp fusebit/package-prod.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
     "coverage": "jest --colors --coverage",
-    "prettier": "prettier --write ./lib ./test"
+    "prettier": "git ls-tree -r `git branch --show-current` --name-only | grep -E \"\\.[tj]?sx?$\" | grep -v assets | xargs -P 1 prettier --write"
   }
 }
