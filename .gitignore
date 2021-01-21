@@ -108,3 +108,5 @@ dist
 # Stuff
 fusebit-devel/lib
 .*.sw?
+
+fusebit/package.json
