@@ -106,7 +106,5 @@ dist
 .tern-port
 
 # Stuff
-fusebit-devel/lib
 .*.sw?
-
-fusebit/package.json
+fusebit.dev

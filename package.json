@@ -24,8 +24,8 @@
   },
   "scripts": {
     "test": "jest --colors",
-    "deploy.dev": "cp -r lib fusebit/ && cp fusebit/package-devel.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
-    "deploy.prod": "rm -rf fusebit/lib && cp fusebit/package-prod.json fusebit/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
+    "deploy.dev": "cp -r fusebit fusebit.dev && cp -r lib fusebit.dev/ && cp fusebit.dev/package-devel.json fusebit.dev/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit.dev -q",
+    "deploy": "fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
     "coverage": "jest --colors --coverage",
     "prettier": "git ls-tree -r `git branch --show-current` --name-only | grep -E \"\\.[tj]?sx?$\" | grep -v assets | xargs -P 1 prettier --write"
   }
