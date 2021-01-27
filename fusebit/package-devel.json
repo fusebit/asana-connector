@@ -1,0 +1,13 @@
+{
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "superagent": "6.1.0",
+    "@fusebit/add-on-sdk": "3.1.0",
+    "@fusebit/oauth-connector": "^1.2.5",
+    "asana": "^0.18.5",
+    "express": "4.17.1"
+  }
+}

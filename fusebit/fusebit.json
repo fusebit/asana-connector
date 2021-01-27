@@ -1,0 +1,32 @@
+{
+  "fuseVersion": "1.8.12",
+  "metadata": {
+    "fusebit": {
+      "editor": {
+        "navigationPanel": {
+          "hideFiles": []
+        }
+      }
+    }
+  },
+  "compute": {
+    "memorySize": 128,
+    "timeout": 30,
+    "staticIp": false
+  },
+  "security": {
+    "authentication": "optional",
+    "functionPermissions": {
+      "allow": [
+        {
+          "action": "storage:*",
+          "resource": "/account/{{accountId}}/subscription/{{subscriptionId}}/storage/"
+        },
+        {
+          "action": "function:*",
+          "resource": "/account/{{accountId}}/subscription/{{subscriptionId}}/"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@fusebit/asana-connector",
+  "version": "1.0.1",
+  "description": "Fusebit Connector for Asana",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "https://fusebit.io",
+  "packageAs": "@fusebit/asana-connector",
+  "keywords": [],
+  "files": ["lib/**", "fusebit/**"],
+  "peerDependencies": {
+    "superagent": "6.1.0"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "@fusebit/add-on-sdk": "3.1.0",
+    "@fusebit/oauth-connector": "^1.2.5",
+    "asana": "^0.18.5",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "prettier": "=2.0.5",
+    "jest": "^24.9.0",
+    "superagent": "6.1.0"
+  },
+  "scripts": {
+    "test": "jest --colors",
+    "deploy.dev": "cp -r fusebit fusebit.dev && cp -r lib fusebit.dev/ && cp fusebit.dev/package-devel.json fusebit.dev/package.json && fuse function deploy --boundary managers asana-connector-manager -d ./fusebit.dev -q",
+    "deploy": "fuse function deploy --boundary managers asana-connector-manager -d ./fusebit -q",
+    "coverage": "jest --colors --coverage",
+    "prettier": "git ls-tree -r `git branch --show-current` --name-only | grep -E \"\\.[tj]?sx?$\" | grep -v assets | xargs -P 1 prettier --write"
+  }
+}

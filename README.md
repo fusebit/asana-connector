@@ -16,20 +16,20 @@ Soon enough you will be writing code of your integration logic. Get in touch at 
 
 ## Organization
 
--   `lib/connector` contains the core Fusebit Asana Connector logic that manages authentication to Asana.
--   `lib/manager` contains the Fusebit Asana Connector Manager logic which supports the install/uninstall/configure operations for the connector.
--   `lib/manager/template` contains a template of a Fusebit Function that exposes the Fusebit Asana Connector interface. As a developer, you will be spending most of your time focusing on adding your integration logic to [VendorAsanaConnector.js](https://github.com/fusebit/asana-connector/blob/main/lib/manager/template/VendorAsanaConnector.js).
--   `fusebit` contains a template of a Fusebit Function that exposes the Fusebit Asana Connector Manager interface.
+- `lib/connector` contains the core Fusebit Asana Connector logic that manages authentication to Asana.
+- `lib/manager` contains the Fusebit Asana Connector Manager logic which supports the install/uninstall/configure operations for the connector.
+- `lib/manager/template` contains a template of a Fusebit Function that exposes the Fusebit Asana Connector interface. As a developer, you will be spending most of your time focusing on adding your integration logic to [VendorAsanaConnector.js](https://github.com/fusebit/asana-connector/blob/main/lib/manager/template/VendorAsanaConnector.js).
+- `fusebit` contains a template of a Fusebit Function that exposes the Fusebit Asana Connector Manager interface.
 
 ## Running tests
 
 Here are a few things you need to know before running tests:
 
--   You must have access to a [Fusebit](https://fusebit.io) subscription.
--   You must have the [Fusebit CLI](https://fusebit.io/docs/reference/fusebit-cli/) installed.
--   You must have a Fusebit CLI profile configured with an account ID and subscription ID, and sufficient permissions to manage all functions and all storage on that subscription.
--   The test will create and remove functions in randomly named boundary in the subscription.
--   The test will create and remove storage objects in randomly named storage ID in the subscription.
+- You must have access to a [Fusebit](https://fusebit.io) subscription.
+- You must have the [Fusebit CLI](https://fusebit.io/docs/reference/fusebit-cli/) installed.
+- You must have a Fusebit CLI profile configured with an account ID and subscription ID, and sufficient permissions to manage all functions and all storage on that subscription.
+- The test will create and remove functions in randomly named boundary in the subscription.
+- The test will create and remove storage objects in randomly named storage ID in the subscription.
 
 To run the tests, set the `FUSE_PROFILE` environment variable to the Fusebit CLI profile name to use:
 
@@ -45,6 +45,6 @@ debug=1 FUSE_PROFILE={profile-name} npm test
 
 ## Release notes
 
-### v1.0.0
+### 1.0.1
 
--   Initial implementation.
+- Initial implementation.
