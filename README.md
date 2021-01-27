@@ -45,6 +45,6 @@ debug=1 FUSE_PROFILE={profile-name} npm test
 
 ## Release notes
 
-### 1.0.0
+### 1.0.1
 
 - Initial implementation.
