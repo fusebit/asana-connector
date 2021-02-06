@@ -45,6 +45,10 @@ debug=1 FUSE_PROFILE={profile-name} npm test
 
 ## Release notes
 
+### 1.1.0
+
+- Upgrade to oauth-connector 1.3.0
+
 ### 1.0.2
 
 - Remove unnecessary import
