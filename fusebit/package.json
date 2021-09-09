@@ -3,6 +3,6 @@
     "node": "10"
   },
   "dependencies": {
-    "@fusebit/asana-connector": "1.1.0"
+    "@fusebit/asana-connector": "1.1.1"
   }
 }
